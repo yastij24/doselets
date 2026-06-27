@@ -1,5 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Contact Us — Doselets</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>
+<title>Contact Us — Doselets</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--blue:#005E92;--ink:#05070A;--text:#2E343B;--muted:#6E7883;--line:#DDE8EF;--wash:#F7FAFC;--paper:#fff;--shadow:0 26px 70px rgba(7,30,44,.08);--ease:cubic-bezier(.4,0,.2,1)}
 html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
@@ -20,6 +21,146 @@ html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,Blink
 .contact-card{background:#fff;border:1px solid #E8F0F5;border-radius:26px;box-shadow:var(--shadow);padding:48px}.contact-card p{font-size:18px;line-height:1.7}.quote{text-align:center}blockquote{font-size:clamp(30px,4vw,56px);line-height:1.05;letter-spacing:-.055em;font-weight:850}cite{display:block;margin-top:22px;color:var(--muted);font-style:normal}
 @media(max-width:980px){.nav{height:auto;padding:16px 0}.nav-inner{flex-wrap:wrap}.nav-links{order:3;width:100%;justify-content:flex-start;gap:18px;overflow-x:auto}.hero-grid,.grid-2{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.compare-grid{grid-template-columns:1fr}.hero .image-card{min-height:300px}}
 @media(max-width:640px){.wrap,.nav-inner{width:min(100% - 32px,1160px)}.nav .btn{width:100%}.cards{grid-template-columns:1fr}.step{grid-template-columns:1fr}.footer-inner{flex-direction:column;align-items:flex-start}.footer-info{padding-left:22px}}
+
+/* ===== Animation system ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .75s var(--ease), transform .75s var(--ease);
+  will-change: opacity, transform;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: .10s; }
+.delay-2 { transition-delay: .20s; }
+.delay-3 { transition-delay: .30s; }
+.delay-4 { transition-delay: .40s; }
+
+.image-card,
+.card,
+.compare-card,
+.split-card,
+.contact-card,
+.benefit-card,
+.callout {
+  transition: transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease);
+}
+
+.image-card:hover,
+.card:hover,
+.compare-card:hover,
+.split-card:hover,
+.contact-card:hover,
+.benefit-card:hover,
+.callout:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 32px 80px rgba(7, 30, 44, .12);
+}
+
+.btn,
+.btn-link {
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease), background .22s var(--ease), color .22s var(--ease);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-link:hover {
+  color: var(--blue);
+}
+
+.float-soft {
+  animation: floatSoft 5.5s ease-in-out infinite;
+}
+
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.fade-in-now {
+  animation: fadeInNow .8s var(--ease) both;
+}
+
+@keyframes fadeInNow {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .fade-in-now,
+  .float-soft {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ===== Font system: Helvetica + Montserrat ===== */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+.eyebrow,
+.nav-links,
+.btn,
+.btn-link,
+.num,
+.step-num,
+.mini {
+  font-family: Montserrat, Helvetica, Arial, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 800;
+}
+
+p,
+.footer-info,
+.contact-card,
+.split-card {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 </style></head><body><main class="site"><nav class="nav"><div class="nav-inner"><a href="index.html" aria-label="Doselets home"><img class="logo-img" src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/1cf1e250-1999-4a7f-a683-c8625bbe7d20/Doselets_Logo_2Clr_Royal+%281%29.png?format=1500w" alt="Doselets logo"></a><div class="nav-links" aria-label="Primary navigation"><a class="" href="index.html">Home</a><a class="active" href="contact.html">Contact Us</a></div><a class="btn" href="early-access.html">Early Access Program</a></div></nav>
-<section class="hero"><div class="wrap hero-grid"><div><h1>Get Started with Doselets.</h1><p>Apply for <a class="btn-link" href="early-access.html">early access</a>, or contact us directly at hello@doselets.com to learn more about our novel delivery platform and what it can do for your practice.</p><div class="hero-actions"><a class="btn" href="early-access.html">Apply for early access</a><a class="btn-link" href="mailto:hello@doselets.com">hello@doselets.com</a></div></div><div class="image-card"><img src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/545cc919-d56a-48f7-943e-f35872061635/flatlay_45deg%2B%281%29.png" alt="Doselets contact"></div></div></section>
-<footer class="footer"><div class="wrap footer-inner"><a href="index.html"><img class="logo-img" src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/1cf1e250-1999-4a7f-a683-c8625bbe7d20/Doselets_Logo_2Clr_Royal+%281%29.png?format=1500w" alt="Doselets logo"></a><div class="footer-info"><div>Doselets by Nexture Bio</div><div>Vacaville, CA</div><div>hello@doselets.com</div></div></div></footer></main></body></html>
+<section class="hero fade-in-now"><div class="wrap hero-grid"><div><h1>Get Started with Doselets.</h1><p>Apply for <a class="btn-link" href="early-access.html">early access</a>, or contact us directly at hello@doselets.com to learn more about our novel delivery platform and what it can do for your practice.</p><div class="hero-actions"><a class="btn" href="early-access.html">Apply for early access</a><a class="btn-link" href="mailto:hello@doselets.com">hello@doselets.com</a></div></div><div class="image-card reveal delay-1 float-soft"><img src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/545cc919-d56a-48f7-943e-f35872061635/flatlay_45deg%2B%281%29.png" alt="Doselets contact"></div></div></section>
+<footer class="footer"><div class="wrap footer-inner"><a href="index.html"><img class="logo-img" src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/1cf1e250-1999-4a7f-a683-c8625bbe7d20/Doselets_Logo_2Clr_Royal+%281%29.png?format=1500w" alt="Doselets logo"></a><div class="footer-info"><div>Doselets by Nexture Bio</div><div>Vacaville, CA</div><div>hello@doselets.com</div></div></div></footer></main>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const revealEls = document.querySelectorAll(".reveal");
+
+  if (!("IntersectionObserver" in window)) {
+    revealEls.forEach(el => el.classList.add("visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: "0px 0px -40px 0px"
+  });
+
+  revealEls.forEach(el => observer.observe(el));
+});
+</script>
+
+</body></html>
