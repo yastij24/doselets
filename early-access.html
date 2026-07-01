@@ -187,7 +187,7 @@ p {
 }
 
 .hero {
-  padding: 88px 0 82px;
+  padding: 42px 0 56px;
 }
 
 .hero-grid {
@@ -218,10 +218,10 @@ p {
 }
 
 .hero-actions {
-  margin-top: 34px;
+  margin-top: 28px;
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 28px;
   flex-wrap: wrap;
 }
 
@@ -249,7 +249,7 @@ p {
 }
 
 .section {
-  padding: 92px 0;
+  padding: 72px 0;
 }
 
 .soft {
@@ -578,7 +578,7 @@ cite {
   }
 
   .hero {
-    padding: 64px 0;
+    padding: 36px 0 48px;
   }
 
   .hero-image,
@@ -742,6 +742,60 @@ h2 {
 
 h3 {
   letter-spacing: 0 !important;
+}
+
+
+/* ===== FINAL EARLY ACCESS LAYOUT FIXES ===== */
+/* Keeps hero visible under sticky nav, removes the large strip/extra gap, and fixes CTA visibility. */
+.hero {
+  padding: 42px 0 56px !important;
+  margin-top: 0 !important;
+}
+
+.hero-grid {
+  align-items: center !important;
+}
+
+.hero-actions {
+  margin-top: 28px !important;
+  gap: 28px !important;
+}
+
+.hero-actions .btn,
+.nav .btn,
+.apply .btn {
+  background: var(--blue) !important;
+  color: #FFFFFF !important;
+  border-color: var(--blue) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.hero-actions .btn-link {
+  color: var(--ink) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.hero + .section,
+#meet {
+  padding-top: 72px !important;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    padding: 36px 0 48px !important;
+  }
+
+  .hero-actions .btn {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 32px 0 44px !important;
+  }
 }
 
 </style>
