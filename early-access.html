@@ -798,6 +798,62 @@ h3 {
   }
 }
 
+
+/* ===== HOW IT WORKS CTA SECTION ===== */
+.instructions-cta {
+  padding: 72px 0 !important;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F7FAFC 100%);
+}
+
+.instructions-cta-card {
+  background: #FFFFFF;
+  border: 1px solid #E8F0F5;
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+  padding: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.instructions-cta-card h2 {
+  font-size: clamp(30px, 3.4vw, 48px);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.instructions-cta-card p {
+  margin-top: 14px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.instructions-cta-card .btn {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.instructions-actions {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 760px) {
+  .instructions-cta-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .instructions-cta-card .btn {
+    width: 100%;
+  }
+}
+
 </style>
 </head>
 
@@ -813,6 +869,7 @@ h3 {
     <div class="nav-links" aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="contact.html">Contact Us</a>
+      <a href="instructions.html">How It Works</a>
     </div>
 
     <a class="btn" href="#apply">Early Access Program</a>

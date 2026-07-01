@@ -710,6 +710,62 @@ h1 .square-dot {
   }
 }
 
+
+/* ===== HOW IT WORKS CTA SECTION ===== */
+.instructions-cta {
+  padding: 72px 0 !important;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F7FAFC 100%);
+}
+
+.instructions-cta-card {
+  background: #FFFFFF;
+  border: 1px solid #E8F0F5;
+  border-radius: 26px;
+  box-shadow: var(--shadow);
+  padding: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.instructions-cta-card h2 {
+  font-size: clamp(30px, 3.4vw, 48px);
+  line-height: 1.05;
+  margin: 0;
+}
+
+.instructions-cta-card p {
+  margin-top: 14px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.instructions-cta-card .btn {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.instructions-actions {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 760px) {
+  .instructions-cta-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .instructions-cta-card .btn {
+    width: 100%;
+  }
+}
+
 </style></head><body>
 <!-- DOSELETS FINAL LATEST DEPLOY: CTA BAG IMAGE UPDATED --><main class="site"><nav class="nav"><div class="nav-inner"><a href="index.html" aria-label="Doselets home"><img class="logo-img" src="doselets-logo-full.png" alt="Doselets logo"></a><div class="nav-links" aria-label="Primary navigation"><a class="active" href="index.html">Home</a><a class="" href="contact.html">Contact Us</a></div><a class="btn" href="early-access.html">Early Access Program</a></div></nav>
 <section class="hero hero-banner fade-in-now">
@@ -750,6 +806,18 @@ h1 .square-dot {
 
 </section>
 <section class="section reveal"><div class="wrap grid-2 hero-swap"><div class="hero-copy"><span class="eyebrow">For Wellness Clinics & Practitioners</span><h2>Our Innovation is your Opportunity.</h2><p style="margin-top:20px"><strong>This is the habit your patients will stick to — the NAD+ Doselet.</strong></p><div class="hero-actions"><a class="btn" href="contact.html">Join our early access program</a></div></div><div class="image-card reveal delay-1 hero-image"><img src="FINAL-bag-lifestyle-image.png" alt="Doselet lifestyle bag image"></div></div></section>
+
+<section class="section instructions-cta" id="how-it-works-cta">
+  <div class="wrap instructions-cta-card">
+    <div>
+      <span class="eyebrow">How It Works</span>
+      <h2>Need Doselet instructions?</h2>
+      <p>View the quick NAD+ Doselet directions page for step-by-step use instructions.</p>
+    </div>
+    <a class="btn" href="instructions.html">View Instructions</a>
+  </div>
+</section>
+
 <footer class="footer"><div class="wrap footer-inner"><a href="index.html"><img class="logo-img" src="doselets-logo-full.png" alt="Doselets logo"></a><div class="footer-info"><div>Doselets by Nexture Bio</div><div>Vacaville, CA</div><div>hello@doselets.com</div></div></div></footer></main>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
