@@ -13,13 +13,13 @@ html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,Blink
 .eyebrow{display:inline-flex;color:var(--blue);text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:800;margin-bottom:16px}h1,h2,h3{letter-spacing:-.055em}h1{font-size:clamp(54px,7vw,106px);line-height:.95;font-weight:850}h2{font-size:clamp(34px,4.4vw,58px);line-height:1.03}p{color:var(--text)}
 .hero{padding:86px 0 90px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.hero p{margin-top:24px;font-size:clamp(18px,1.7vw,23px);line-height:1.58;max-width:660px}.hero-actions{margin-top:36px;display:flex;align-items:center;gap:34px;flex-wrap:wrap}.blue{color:var(--blue)}em{font-style:italic}
 .image-card{border-radius:28px;overflow:hidden;background:#fff;border:1px solid #E8F0F5;box-shadow:var(--shadow)}.image-card img{width:100%;height:100%;object-fit:cover}.hero .image-card{min-height:420px}
-.section{padding:96px 0}.soft{background:var(--wash);border-top:1px solid rgba(0,94,146,.08);border-bottom:1px solid rgba(0,94,146,.08)}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}.copy p{margin-top:22px;font-size:17px;line-height:1.75}.split-card{background:#fff;border:1px solid #E8F0F5;border-radius:24px;padding:38px;box-shadow:0 22px 56px rgba(18,41,56,.06)}.split-card p{font-size:17px;line-height:1.72}
+.section{padding:96px 0}.soft{background:var(--wash);border-top:1px solid rgba(0,94,146,.08);border-bottom:1px solid rgba(0,94,146,.08)}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}.hero-swap .hero-image{order:1}.hero-swap .hero-copy{order:2}.copy p{margin-top:22px;font-size:17px;line-height:1.75}.split-card{background:#fff;border:1px solid #E8F0F5;border-radius:24px;padding:38px;box-shadow:0 22px 56px rgba(18,41,56,.06)}.split-card p{font-size:17px;line-height:1.72}
 .cards{margin-top:42px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.card{background:#fff;border:1px solid #E8F0F5;border-radius:18px;padding:34px 26px;box-shadow:0 22px 56px rgba(18,41,56,.06);min-height:250px}.num{color:var(--blue);font-size:12px;font-weight:850;letter-spacing:.13em;margin-bottom:14px}.card h3{font-size:20px;margin-bottom:12px}.card p{font-size:14.5px;line-height:1.62;color:var(--text)}
 .dark{background:var(--blue);color:#fff}.dark p,.dark .eyebrow{color:rgba(255,255,255,.72)}.dark h2,.dark h3{color:#fff}.compare-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:38px}.compare-card{border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.07);border-radius:16px;padding:26px 20px}.compare-card h3{font-size:17px;margin-bottom:10px}.compare-card p{font-size:13px;line-height:1.6;color:rgba(255,255,255,.74)}
 .steps{display:grid;gap:14px;margin-top:38px}.step{display:grid;grid-template-columns:80px 1fr;gap:24px;align-items:start;padding:28px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.07);border-radius:20px}.step-num{width:56px;height:56px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;font-weight:850}
 .footer{padding:44px 0;background:#fff;border-top:1px solid #E8F0F5}.footer-inner{display:flex;align-items:center;gap:54px}.footer-info{border-left:1px solid rgba(0,94,146,.38);padding-left:38px;color:var(--text);font-size:14px;line-height:1.55}
 .contact-card{background:#fff;border:1px solid #E8F0F5;border-radius:26px;box-shadow:var(--shadow);padding:48px}.contact-card p{font-size:18px;line-height:1.7}.quote{text-align:center}blockquote{font-size:clamp(30px,4vw,56px);line-height:1.05;letter-spacing:-.055em;font-weight:850}cite{display:block;margin-top:22px;color:var(--muted);font-style:normal}
-@media(max-width:980px){.nav{height:auto;padding:16px 0}.nav-inner{flex-wrap:wrap}.nav-links{order:3;width:100%;justify-content:flex-start;gap:18px;overflow-x:auto}.hero-grid,.grid-2{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.compare-grid{grid-template-columns:1fr}.hero .image-card{min-height:300px}}
+@media(max-width:980px){.nav{height:auto;padding:16px 0}.nav-inner{flex-wrap:wrap}.nav-links{order:3;width:100%;justify-content:flex-start;gap:18px;overflow-x:auto}.hero-grid,.grid-2{grid-template-columns:1fr}.hero-swap .hero-copy,.hero-swap .hero-image{order:initial}.cards{grid-template-columns:1fr 1fr}.compare-grid{grid-template-columns:1fr}.hero .image-card{min-height:300px}}
 @media(max-width:640px){.wrap,.nav-inner{width:min(100% - 32px,1160px)}.nav .btn{width:100%}.cards{grid-template-columns:1fr}.step{grid-template-columns:1fr}.footer-inner{flex-direction:column;align-items:flex-start}.footer-info{padding-left:22px}}
 
 /* ===== Animation system ===== */
@@ -174,13 +174,583 @@ p,
   object-position: center right;
 }
 
-</style></head><body><main class="site"><nav class="nav"><div class="nav-inner"><a href="index.html" aria-label="Doselets home"><img class="logo-img" src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/1cf1e250-1999-4a7f-a683-c8625bbe7d20/Doselets_Logo_2Clr_Royal+%281%29.png?format=1500w" alt="Doselets logo"></a><div class="nav-links" aria-label="Primary navigation"><a class="active" href="index.html">Home</a><a class="" href="contact.html">Contact Us</a></div><a class="btn" href="early-access.html">Early Access Program</a></div></nav>
-<section class="hero fade-in-now"><div class="wrap hero-grid"><div><h1>Bioactive Delivery,<br><em>Solved<span class="blue">.</span></em></h1><div class="hero-actions"><a class="btn" href="early-access.html">Join the Early Access Program</a></div></div><div class="image-card hero-product-image"><img src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/d1038b1f-514f-4052-81a4-d3ce0e0b7b64/doselet_hand_option_C.png" alt="Doselet in hand"></div></div></section>
-<section class="section soft reveal" id="problem"><div class="wrap grid-2"><div class="copy"><span class="eyebrow">The Problem</span><h2>There's a better way to deliver bioactives.<br>This is it.</h2><p><strong>Pills, gummies and oral films share one flaw: first-pass metabolism destroys the full benefit of bioactives before they enter the bloodstream.</strong></p><p><strong>The Doselet™ bypasses that entirely.</strong><br><strong>A small, plant-based nanofiber patch that sticks to the inner cheek and delivers bioactives directly into circulation.</strong></p><p><strong>No pills, no needles, no fuss.</strong></p></div><div class="image-card reveal delay-1"><img src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/d1038b1f-514f-4052-81a4-d3ce0e0b7b64/doselet_hand_option_C.png" alt="Doselet in hand"></div></div></section>
-<section class="section reveal"><div class="wrap"><span class="eyebrow">The Solution</span><h2>Tiny Patch. Big Kick.</h2><p style="margin-top:8px;color:var(--muted);font-size:18px">Doselets vs. Everyone Else</p><div class="compare-grid" style="color:#05070A"><div class="compare-card reveal" style="background:#fff;border-color:#E8F0F5"><h3>The Doselet vs. Pills and Tablets</h3><p style="color:var(--text)">First-pass metabolism destroys bioavailability. Buccal delivery doesn't.</p></div><div class="compare-card reveal" style="background:#fff;border-color:#E8F0F5"><h3>The Doselet vs. Injections</h3><p style="color:var(--text)">Effective bioavailability. No needles, no mixing, no fuss.</p></div><div class="compare-card reveal" style="background:#fff;border-color:#E8F0F5"><h3>The Doselet vs. Gummies</h3><p style="color:var(--text)">Complete absorption. Zero loss.</p></div><div class="compare-card reveal" style="background:#fff;border-color:#E8F0F5"><h3>The Doselet vs. Sprays</h3><p style="color:var(--text)">Heat unstable. The Doselet: precise, stable, portable.</p></div><div class="compare-card reveal" style="background:#fff;border-color:#E8F0F5"><h3>The Doselet vs. Cast Films</h3><p style="color:var(--text)">Heat degradation compromises sensitive molecules. Our nanofiber stays stable.</p></div></div><div class="hero-actions"><a class="btn" href="early-access.html">Apply for Early Access</a></div></div></section>
-<section class="section soft reveal"><div class="wrap grid-2"><div><span class="eyebrow">Why Doselets?</span><h2>Designed Around the Dose</h2></div><div class="image-card reveal delay-1"><img src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/30cc561e-ce6d-4994-ba33-3424b29fabd1/flatlay_45deg%2B%281%29.png" alt="Doselets flatlay"></div></div><div class="wrap cards"><article class="card reveal"><div class="num">02</div><h3>Convenience</h3><p>No water. No pills. No needles. Place one Doselet inside the cheek, hold for 60 seconds, let it dissolve. Done.</p></article><article class="card reveal"><div class="num">04</div><h3>Efficacy</h3><p>Plant-based fibers protect molecular integrity and deliver bioactives intact, at full potency — for results patients can actually feel.</p></article><article class="card reveal"><div class="num">01</div><h3>Precision delivery</h3><p>Precise, repeatable dosing with every application. No variability. No guesswork.</p></article><article class="card reveal"><div class="num">03</div><h3>Comfort</h3><p>Soft, thin, flexible film stays comfortably in place until it dissolves.</p></article></div></section>
-<section class="section reveal"><div class="wrap grid-2"><div><span class="eyebrow">For Wellness Clinics & Practitioners</span><h2>Our Innovation is your Opportunity.</h2><p style="margin-top:20px">Your patients want NAD+. This is the daily habit your patients will actually stick to.</p><div class="hero-actions"><a class="btn" href="contact.html">Join our early access program</a></div></div><div class="image-card reveal delay-1"><img src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/750436eb-bc79-4cae-9c13-5b042e63bf4f/alt_circle_doselet_only.png" alt="Doselet benefits"></div></div></section>
-<footer class="footer"><div class="wrap footer-inner"><a href="index.html"><img class="logo-img" src="https://images.squarespace-cdn.com/content/v1/69d54da2553f6b3b19ffde56/1cf1e250-1999-4a7f-a683-c8625bbe7d20/Doselets_Logo_2Clr_Royal+%281%29.png?format=1500w" alt="Doselets logo"></a><div class="footer-info"><div>Doselets by Nexture Bio</div><div>Vacaville, CA</div><div>hello@doselets.com</div></div></div></footer></main>
+
+/* ===== Header hero image whitespace fix ===== */
+.hero-product-image,
+.hero .image-card {
+  min-height: 420px;
+  background: #F7FAFC;
+  overflow: hidden;
+}
+
+.hero-product-image img,
+.hero .image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* tighter crop only for the top hero image */
+.hero .hero-grid > .image-card:first-of-type img,
+.hero-product-image img {
+  transform: scale(1.18);
+  transform-origin: center center;
+}
+
+
+/* ===== Problem section interchanged: image left, text right ===== */
+#problem .grid-2 {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+#problem .image-card {
+  order: 1;
+  min-height: 420px;
+}
+
+#problem .copy {
+  order: 2;
+  max-width: 620px;
+}
+
+#problem .image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 980px) {
+  #problem .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  #problem .image-card {
+    order: 1;
+  }
+
+  #problem .copy {
+    order: 2;
+  }
+}
+
+
+/* ===== Consistent type scale across sections ===== */
+.section .copy h2,
+.clinics h2,
+#clinics h2,
+.copy h2,
+.section-head h2 {
+  font-size: clamp(36px, 4.1vw, 64px) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.045em !important;
+}
+
+/* Make the final CTA match the rest of the site instead of feeling oversized */
+#clinics .copy h2,
+#clinics h2,
+.clinics .copy h2,
+.clinics h2 {
+  font-size: clamp(36px, 4.1vw, 64px) !important;
+  max-width: 680px;
+}
+
+.section .copy p,
+#clinics .copy p,
+#clinics p,
+.clinics p {
+  font-size: 17px !important;
+  line-height: 1.65 !important;
+  max-width: 620px;
+}
+
+/* Keep eyebrow labels consistent */
+.eyebrow {
+  font-size: 12px !important;
+  letter-spacing: .12em !important;
+  font-weight: 800 !important;
+}
+
+/* Keep CTA section spacing consistent with other sections */
+#clinics,
+.clinics {
+  padding-top: 88px !important;
+  padding-bottom: 88px !important;
+}
+
+/* Better visual balance for CTA image */
+#clinics .image-card,
+.clinics .image-card {
+  min-height: 360px;
+}
+
+#clinics .image-card img,
+.clinics .image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: contain;
+  object-position: center;
+  padding: 28px;
+  background: #fff;
+}
+
+/* Make buttons consistent across sections */
+.btn {
+  min-height: 50px !important;
+  padding: 0 26px !important;
+  font-size: 14px !important;
+}
+
+/* Mobile consistency */
+@media (max-width: 980px) {
+  .section .copy h2,
+  #clinics h2,
+  .clinics h2 {
+    font-size: clamp(34px, 8vw, 50px) !important;
+  }
+}
+
+
+/* ===== Bold clinic CTA copy styling ===== */
+#clinics .copy p strong,
+.clinics .copy p strong {
+  font-weight: 700;
+  color: var(--ink);
+  display: inline-block;
+}
+
+
+/* ===== All headers in Montserrat ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.eyebrow,
+.nav-links,
+.btn,
+.btn-link,
+.card h3,
+.compare-card h3,
+.step h3,
+.benefit-card h3,
+blockquote {
+  font-family: Montserrat, Helvetica, Arial, sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800 !important;
+}
+
+
+/* ===== Second section custom image ===== */
+#problem .image-card {
+  min-height: 420px;
+  overflow: hidden;
+}
+
+#problem .image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+
+/* ===== Problem section replacement image ===== */
+#problem .image-card {
+  min-height: 420px;
+  overflow: hidden;
+  background: #F7FAFC;
+}
+
+#problem .image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+
+/* ===== Correct Why Doselets sequence styling ===== */
+.cards .card .num {
+  color: var(--blue);
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.cards .card h3 {
+  font-family: Montserrat, Helvetica, Arial, sans-serif !important;
+  font-weight: 800;
+}
+
+
+
+/* ===== Uploaded full logo image styling ===== */
+.logo-img {
+  display: block;
+  width: auto;
+  height: 38px;
+  max-width: 250px;
+  object-fit: contain;
+}
+
+
+/* ===== CTA section replacement image ===== */
+#clinics .image-card,
+.clinics .image-card {
+  min-height: 360px;
+  overflow: hidden;
+  background: #F7FAFC;
+}
+
+#clinics .image-card img,
+.clinics .image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+
+/* ===== Hero square dot ===== */
+.square-dot {
+  display: inline-block;
+  width: .20em;
+  height: .20em;
+  background: #005E92;
+  margin-left: .08em;
+  vertical-align: .02em;
+  border-radius: .02em;
+}
+
+
+/* ===== Updated CTA section image ===== */
+#clinics .image-card,
+.clinics .image-card {
+  min-height: 360px;
+  overflow: hidden;
+  background: #F7FAFC;
+}
+
+#clinics .image-card img,
+.clinics .image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+
+/* ===== Correct final CTA image ===== */
+section:last-of-type .image-card {
+  overflow: hidden;
+}
+
+section:last-of-type .image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+
+/* FINAL VERSION: last CTA image is the bag lifestyle image */
+#clinics .image-card img,
+section:last-of-type .image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+
+/* FINAL no repeated section images */
+#problem .image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+section.soft:nth-of-type(5) .image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+
+/* Final local image fixes */
+.image-card {
+  overflow: hidden;
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.hero-product-image img {
+  object-fit: contain;
+  background: #ffffff;
+  padding: 24px;
+}
+
+#problem .image-card img {
+  object-fit: cover;
+  object-position: center center;
+}
+
+footer .logo-img,
+.nav .logo-img {
+  min-height: auto;
+  object-fit: contain;
+  padding: 0;
+  background: transparent;
+}
+
+
+/* ===== FINAL typography system ===== */
+/* Headers / nav / labels / buttons */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.eyebrow,
+.nav-links,
+.btn,
+.btn-link,
+.card h3,
+.compare-card h3,
+.step h3,
+.benefit-card h3,
+blockquote,
+.num,
+.step-num {
+  font-family: Montserrat, Helvetica, Arial, sans-serif !important;
+}
+
+/* Body / paragraph copy */
+body,
+p,
+.copy p,
+.section p,
+.hero p,
+.footer-info,
+.contact-card,
+.split-card,
+.card p,
+.compare-card p {
+  font-family: Helvetica, Arial, sans-serif !important;
+}
+
+/* Headline spacing fix: keeps Montserrat but prevents letters from touching */
+h1 {
+  font-size: clamp(54px, 7vw, 100px) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.025em !important;
+  font-weight: 800 !important;
+  font-kerning: normal;
+  text-rendering: geometricPrecision;
+}
+
+h2 {
+  letter-spacing: -0.025em !important;
+  line-height: 1.05 !important;
+  font-weight: 800 !important;
+}
+
+h3 {
+  letter-spacing: -0.01em !important;
+}
+
+/* Problem and clinic copy styles */
+#problem .copy p,
+#problem p {
+  font-family: Helvetica, Arial, sans-serif !important;
+  font-size: 17px !important;
+  line-height: 1.75 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+}
+
+.hero-copy p,
+#clinics p,
+.clinics p {
+  font-family: Helvetica, Arial, sans-serif !important;
+  font-size: 17px !important;
+  line-height: 1.65 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+}
+
+/* Keep hero image clean */
+.hero-product-image img {
+  object-fit: contain !important;
+  object-position: center center !important;
+  padding: 28px !important;
+  background: #fff !important;
+  transform: none !important;
+}
+
+/* Swapped final CTA section */
+.hero-swap .hero-image { order: 1; }
+.hero-swap .hero-copy { order: 2; }
+
+@media (max-width: 980px) {
+  .hero-swap .hero-image,
+  .hero-swap .hero-copy { order: initial; }
+}
+
+
+/* ===== FINAL headline letter-spacing correction ===== */
+/* Keeps Montserrat, but removes tight tracking so Bioactive c/t does not touch */
+h1 {
+  font-family: Montserrat, Helvetica, Arial, sans-serif !important;
+  letter-spacing: 0 !important;
+  line-height: 1.02 !important;
+  font-weight: 800 !important;
+  font-kerning: normal !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+.hero h1,
+.hero h1 em {
+  letter-spacing: 0 !important;
+}
+
+h2 {
+  letter-spacing: -0.01em !important;
+}
+
+h3 {
+  letter-spacing: 0 !important;
+}
+
+
+/* ===== Align blue square after Solved ===== */
+.hero h1 .dot,
+.hero h1 .blue-dot,
+.hero h1 .square-dot,
+h1 .dot,
+h1 .blue-dot,
+h1 .square-dot {
+  display: inline-block !important;
+  width: 0.17em !important;
+  height: 0.17em !important;
+  background: var(--blue, #005E92) !important;
+  border-radius: 0.025em !important;
+  vertical-align: baseline !important;
+  transform: translateY(0.02em) !important;
+  margin-left: 0.055em !important;
+}
+
+
+
+/* ===== Replaced homepage header concept image ===== */
+.hero-banner {
+  padding: 40px 0 56px;
+}
+
+.hero-header-banner {
+  border-radius: 28px;
+  overflow: hidden;
+  background: #F7FAFC;
+  border: 1px solid #E8F0F5;
+  box-shadow: var(--shadow);
+}
+
+.hero-header-banner img {
+  width: 100%;
+  height: auto;
+  min-height: 0 !important;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  background: #F7FAFC;
+}
+
+@media (max-width: 980px) {
+  .hero-banner {
+    padding: 28px 0 40px;
+  }
+}
+
+</style></head><body>
+<!-- DOSELETS FINAL LATEST DEPLOY: CTA BAG IMAGE UPDATED --><main class="site"><nav class="nav"><div class="nav-inner"><a href="index.html" aria-label="Doselets home"><img class="logo-img" src="doselets-logo-full.png" alt="Doselets logo"></a><div class="nav-links" aria-label="Primary navigation"><a class="active" href="index.html">Home</a><a class="" href="contact.html">Contact Us</a></div><a class="btn" href="early-access.html">Early Access Program</a></div></nav>
+<section class="hero hero-banner fade-in-now">
+  <div class="wrap">
+    <div class="image-card hero-header-banner">
+      <img src="bioactive_delivery_solution_concept.png" alt="Doselets Bioactive Delivery, Solved header concept">
+    </div>
+  </div>
+</section>
+<section class="section soft reveal" id="problem"><div class="wrap grid-2"><div class="copy"><h2>There's a better way to deliver bioactives.<br>This is it.</h2><p><strong>Pills, gummies and oral films share one flaw: first-pass metabolism destroys the full benefit of bioactives before they enter the bloodstream.</strong></p><p><strong>The Doselet™ bypasses that entirely.</strong><br><strong>A small, plant-based nanofiber patch that sticks to the inner cheek and delivers bioactives directly into circulation.</strong></p><p><strong>No pills, no needles, no fuss.</strong></p></div><div class="image-card reveal delay-1"><img src="problem-wallet-keys-phone.png" alt="Doselet shown with wallet, keys, and phone on marble background"></div></div></section>
+<section class="section reveal"><div class="wrap"><h2>Tiny Patch. Big Kick.</h2><p style="margin-top:8px;color:var(--muted);font-size:18px">Doselets vs. Everyone Else</p><div class="compare-grid" style="color:#05070A"><div class="compare-card reveal" style="background:#fff;border-color:#E8F0F5"><h3>The Doselet vs. Pills and Tablets</h3><p style="color:var(--text)">First-pass metabolism destroys bioavailability. Buccal delivery doesn't.</p></div><div class="compare-card reveal" style="background:#fff;border-color:#E8F0F5"><h3>The Doselet vs. Injections</h3><p style="color:var(--text)">Effective bioavailability. No needles, no mixing, no fuss.</p></div><div class="compare-card reveal" style="background:#fff;border-color:#E8F0F5"><h3>The Doselet vs. Gummies</h3><p style="color:var(--text)">Complete absorption. Zero loss.</p></div><div class="compare-card reveal" style="background:#fff;border-color:#E8F0F5"><h3>The Doselet vs. Sprays</h3><p style="color:var(--text)">Heat unstable. The Doselet: precise, stable, portable.</p></div><div class="compare-card reveal" style="background:#fff;border-color:#E8F0F5"><h3>The Doselet vs. Cast Films</h3><p style="color:var(--text)">Heat degradation compromises sensitive molecules. Our nanofiber stays stable.</p></div></div><div class="hero-actions"><a class="btn" href="early-access.html">Apply for Early Access</a></div></div></section>
+<section class="section soft reveal"><div class="wrap grid-2"><div><span class="eyebrow">Why Doselets?</span><h2>Designed Around the Dose</h2></div><div class="image-card reveal delay-1"><img src="pocket-doselet.png" alt="Doselets in hand on marble background"></div></div>
+<div class="wrap cards">
+  <article class="card">
+    <div class="num">01</div>
+    <h3>Precision delivery</h3>
+    <p>Precise, repeatable dosing with every application. No variability. No guesswork.</p>
+  </article>
+
+  <article class="card">
+    <div class="num">02</div>
+    <h3>Convenience</h3>
+    <p>No water. No pills. No needles. Place one Doselet inside the cheek, hold for 60 seconds, let it dissolve. Done.</p>
+  </article>
+
+  <article class="card">
+    <div class="num">03</div>
+    <h3>Comfort</h3>
+    <p>Soft, thin, flexible film stays comfortably in place until it dissolves.</p>
+  </article>
+
+  <article class="card">
+    <div class="num">04</div>
+    <h3>Efficacy</h3>
+    <p>Plant-based fibers protect molecular integrity and deliver bioactives intact, at full potency — for results patients can actually feel.</p>
+  </article>
+</div>
+
+</section>
+<section class="section reveal"><div class="wrap grid-2 hero-swap"><div class="hero-copy"><span class="eyebrow">For Wellness Clinics & Practitioners</span><h2>Our Innovation is your Opportunity.</h2><p style="margin-top:20px"><strong>This is the habit your patients will stick to — the NAD+ Doselet.</strong></p><div class="hero-actions"><a class="btn" href="contact.html">Join our early access program</a></div></div><div class="image-card reveal delay-1 hero-image"><img src="FINAL-bag-lifestyle-image.png" alt="Doselet lifestyle bag image"></div></div></section>
+<footer class="footer"><div class="wrap footer-inner"><a href="index.html"><img class="logo-img" src="doselets-logo-full.png" alt="Doselets logo"></a><div class="footer-info"><div>Doselets by Nexture Bio</div><div>Vacaville, CA</div><div>hello@doselets.com</div></div></div></footer></main>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const revealEls = document.querySelectorAll(".reveal");
